@@ -11,9 +11,9 @@ public class GunBase : MonoBehaviour
 
     private Coroutine _currentCoroutine;
 
-    IEnumerator ShootCoroutine()
+    protected virtual IEnumerator ShootCoroutine()
     {
-        while(true)
+        while (true)
         {
             Shoot();
             yield return new WaitForSeconds(timeBetweenShoot);
