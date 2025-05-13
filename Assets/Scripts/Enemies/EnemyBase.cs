@@ -7,10 +7,14 @@ using Animation;
 
 namespace Enemy
 {
-    public class EnemyBase : MonoBehaviour
+    public class EnemyBase : MonoBehaviour, IDamageable
     {
+        public Collider collider;
+        public FlashColor flashColor;
+        public ParticleSystem particleSystem;
 
         public float startLife = 10f;
+
 
         [SerializeField] private float _currentLife;
 
@@ -36,8 +40,8 @@ namespace Enemy
         protected virtual void Init()
         {
             ResetLife();
-            if(startWithBornAnimation)
-            BornAnimation();
+            if (startWithBornAnimation)
+                BornAnimation();
         }
 
         protected virtual void Kill()
@@ -49,16 +53,19 @@ namespace Enemy
 
         protected virtual void OnKill()
         {
+            if (collider != null) collider.enabled = false;
             Destroy(gameObject, 3f);
             PlayAnimationByTrigger(AnimationType.DEATH);
         }
 
         public void OnDamage(float f)
         {
+            if (flashColor != null) flashColor.Flash();
+            if (particleSystem != null) particleSystem.Emit(15);
 
             _currentLife -= f;
 
-            if(_currentLife <= 0)
+            if (_currentLife <= 0)
             {
                 Kill();
             }
@@ -80,11 +87,17 @@ namespace Enemy
         //debug
         private void Update()
         {
-            if(Input.GetKeyDown(KeyCode.T))
+            if (Input.GetKeyDown(KeyCode.T))
             {
                 OnDamage(5f);
 
             }
+        }
+
+        public void Damage(float damage)
+        {
+            Debug.Log("Damage");
+            OnDamage(damage);
         }
     }
 }
