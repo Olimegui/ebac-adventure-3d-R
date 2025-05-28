@@ -5,7 +5,14 @@ using UnityEngine;
 public interface IDamageable 
 {
 
-    void Damage(float damage);
+    public void Damage(float damage)
+    {
+        throw new System.NotImplementedException();
+    }
+    
 
-    void Damage(float damage, Vector3 dir);
+    public void Damage(float damage, Vector3 dir)
+    {
+        throw new System.NotImplementedException();
+    }
 }
