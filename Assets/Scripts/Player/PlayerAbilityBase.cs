@@ -8,20 +8,25 @@ public class PlayerAbilityBase : MonoBehaviour
 
     protected Inputs inputs;
 
-    private void Onvalidade()
+    private void OnValidate()
     {
         if (player == null) player = GetComponent<Player>();
     }
 
     private void Start()
     {
-        inputs = new Inputs();
         inputs.Enable();
 
 
         Init();
-        Onvalidade();
+        OnValidate();
         RegisterListeners();
+    }
+
+    private void Awake()
+    {
+        if (inputs == null)
+           inputs = new Inputs();
     }
 
     private void OnEnable()
@@ -32,18 +37,32 @@ public class PlayerAbilityBase : MonoBehaviour
 
     private void OnDisable()
     {
-        inputs.Disable();
+        if (inputs != null)
+        {
+            inputs.Gameplay.Disable();
+
+        }
+
+        Init();
+        OnValidate();
+        RegisterListeners();
     }
 
     private void OnDestroy()
     {
-        RemoveListerners();
+        if (inputs != null)
+        {
+            inputs.Dispose();
+            inputs = null;
+        }
+
+        RemoveListeners();
     }
 
     protected virtual void Init() { }
 
     protected virtual void RegisterListeners() { }
 
-    protected virtual void RemoveListerners() { }
+    protected virtual void RemoveListeners() { }
 
 }

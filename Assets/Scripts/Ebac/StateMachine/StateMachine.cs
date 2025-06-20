@@ -46,19 +46,15 @@ namespace Ebac.StateMachine
             }
         }
 
-        public void SwitchState(T state)
+        public void SwitchState(T state, params object[] objs)
         {
             if (_currentState != null) _currentState.OnStateExit();
 
             if (dictionaryState.TryGetValue(state, out StateBase newState))
             {
-                //_currentState = dictionaryState[state];
-                _currentState = newState;
-                _currentState.OnStateEnter();
-            }
-            else 
-            {
-                Debug.LogWarning("Estado não registrado na máguina de estados!");         
+                _currentState = dictionaryState[state];
+                //_currentState = newState;
+                _currentState.OnStateEnter(objs);
             }
         }
 

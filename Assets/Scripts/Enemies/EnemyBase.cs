@@ -54,9 +54,7 @@ namespace Enemy
 
         protected virtual void Kill()
         {
-
             OnKill();
-
         }
 
         protected virtual void OnKill()
@@ -113,7 +111,7 @@ namespace Enemy
 
             if(p != null)
             {
-                p.Damage(1);
+                p.healthBase.Damage(1);
             }
         }
         public virtual void Update()
