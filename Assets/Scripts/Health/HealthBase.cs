@@ -11,6 +11,8 @@ public class HealthBase : MonoBehaviour
     public Action<HealthBase> OnDamage;
     public Action<HealthBase> OnKill;
 
+    public List<UIGunUpdater> uiGunUpdater;
+
     private void Awake()
     {
         Init();
@@ -51,11 +53,21 @@ public class HealthBase : MonoBehaviour
         {
             Kill();
         }
+        UpdateUI();
         OnDamage?.Invoke(this);
     }
 
     public void Damage(float damage, Vector3 dir)
     {
         Damage(damage);
+    }
+
+    private void UpdateUI()
+    {
+        if(uiGunUpdater != null)
+        {
+            uiGunUpdater.ForEach(i => i.UpdateValue((float) _currentLife / startLife));
+        }
+           
     }
 }
