@@ -12,7 +12,7 @@ public class CheckPointBase : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (checkpointActived && other.transform.tag == "Player")
+        if (!checkpointActived && other.transform.tag == "Player")
         {
           CheckCheckpoint();
 
@@ -31,15 +31,18 @@ public class CheckPointBase : MonoBehaviour
         meshRenderer.material.SetColor("_EmissionColor", Color.white);
     }
 
-    private void TurnItOf()
+    private void TurnItOff()
     {
         meshRenderer.material.SetColor("_EmissionColor", Color.grey);
     }
 
     private void SaveCheckPoint()
     {
-        if(PlayerPrefs.GetInt(checkpointkey, 0) > key)
-        PlayerPrefs.SetInt(checkpointkey, key);
+        /*   if(PlayerPrefs.GetInt(checkpointkey, 0) > key)
+           PlayerPrefs.SetInt(checkpointkey, key);
+        */
+       
+        CheckPointManager.Instance.SaveCheckPoint(key);
 
         checkpointActived = true;
     }

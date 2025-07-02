@@ -26,6 +26,7 @@ public class Player : MonoBehaviour//, IDamageable
 
     [Header("Life")]
     public HealthBase healthBase;
+   // public UIFillUpdater inGunUpdater;
 
     private bool _alive = true;
 
@@ -49,9 +50,25 @@ public class Player : MonoBehaviour//, IDamageable
         if(_alive)
         {
             _alive = false;
-           animator.SetTrigger("Death");
+            animator.SetTrigger("Death");
             colliders.ForEach(i => i.enabled = false);
+
+            Invoke(nameof(Revive), 3f);
         }
+    }
+
+    private void Revive()
+    {
+        _alive = true;
+        healthBase.ResetLife();
+        animator.SetTrigger("Revive");
+        Respawn();
+        Invoke(nameof(TurnOnColliders), .1f);
+    }
+
+    private void TurnOnColliders()
+    {
+        colliders.ForEach(i => i.enabled = true);
     }
 
     public void Damage(HealthBase h)
@@ -70,6 +87,7 @@ public class Player : MonoBehaviour//, IDamageable
     void Update()
     {
         transform.Rotate(0, Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime, 0);
+
         var inputAxisVertical = Input.GetAxis("Vertical");
         var speedVector = transform.forward * inputAxisVertical * speed;
 
@@ -105,4 +123,14 @@ public class Player : MonoBehaviour//, IDamageable
         animator.SetBool("Run", inputAxisVertical != 0);
 
     }
+
+    [NaughtyAttributes.Button]
+    public void Respawn()
+    {
+       if (CheckPointManager.Instance.HasCheckpoint())
+       {
+            transform.position = CheckPointManager.Instance.GetPositionFromLastCheckpoint();
+       }
+    }
+
 }
