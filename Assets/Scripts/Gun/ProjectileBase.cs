@@ -20,7 +20,7 @@ public class ProjectileBase : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(Vector3.forward * (Time.deltaTime * speed));
+        transform.Translate(Vector3.forward * speed * (Time.deltaTime));
     }
 
     private void OnCollisionEnter(Collision collision)
