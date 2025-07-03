@@ -461,6 +461,7 @@ GameObject:
   - component: {fileID: 54743554}
   - component: {fileID: 54743553}
   - component: {fileID: 54743552}
+  - component: {fileID: 54743555}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -544,6 +545,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &54743555
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54743550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 0
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &59572002
 GameObject:
   m_ObjectHideFlags: 0
@@ -7732,7 +7750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55e5383f64f75164196b4b620dc4181e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunBase: {fileID: 110953119313014075, guid: e411233b1631aae47932022b9bfff6c8, type: 3}
+  gunBase: {fileID: 7634407594306041871, guid: e96fd4f90251fc14fafaf2f5054c17b2, type: 3}
   gunPosition: {fileID: 2029931256}
 --- !u!65 &1186004474
 BoxCollider:
@@ -10023,8 +10041,8 @@ MonoBehaviour:
       colorBlindnessType: 0
       colorBlindnessStrength: 1
   m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
+  m_ShowToolkit: 1
+  m_ShowCustomSorter: 1
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
@@ -12762,6 +12780,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1875707368}
   - component: {fileID: 1875707367}
+  - component: {fileID: 1875707369}
   m_Layer: 0
   m_Name: CM vcam1 (1)
   m_TagString: Untagged
@@ -12824,6 +12843,23 @@ Transform:
   - {fileID: 54743551}
   m_Father: {fileID: 1040361633}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1875707369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875707366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea4af9d75b6e02d4d8804c13831a25ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virtualCamera: {fileID: 1875707367}
+  shakeTime: 0
+  amplitude: 3
+  frequency: 1
+  time: 0.2
 --- !u!1 &1883559579
 GameObject:
   m_ObjectHideFlags: 0
