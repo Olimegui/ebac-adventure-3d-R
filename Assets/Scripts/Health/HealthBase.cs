@@ -27,6 +27,7 @@ public class HealthBase : MonoBehaviour
     public virtual void ResetLife()
     {
         _currentLife = startLife;
+        UpdateUI();
     }
 
     protected virtual void Kill()
