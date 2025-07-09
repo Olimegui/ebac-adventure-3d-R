@@ -25,6 +25,8 @@ public class ProjectileBase : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("Colidiu com: " + collision.transform.name);
+
         foreach (var t in tagsToHit)
         {
             if(collision.transform.tag == t)

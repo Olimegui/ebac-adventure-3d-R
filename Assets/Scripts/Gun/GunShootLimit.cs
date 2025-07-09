@@ -33,6 +33,10 @@ public class GunShootLimit : GunBase
                 UpdateUI();
                 yield return new WaitForSeconds(timeBetweenShoot);
             }
+            else
+            {
+                yield return null;
+            }
 
         }
     }
