@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ebac.Core.Singleton;
 
-public class Player : Singleton<Player>//, IDamageable
+public class Player : Singleton<Player>, IDamageable
 {
     public List<Collider> colliders;
     public Animator animator;
@@ -42,7 +42,7 @@ public class Player : Singleton<Player>//, IDamageable
         OnValidate();
 
         healthBase.OnDamage += Damage;
-        healthBase.OnDamage += OnKill;
+        healthBase.OnKill += OnKill;
     }
 
 
@@ -78,13 +78,14 @@ public class Player : Singleton<Player>//, IDamageable
         flashColors.ForEach(i => i.Flash());
         EffectsManager.Instance.ChangeVignette();
     }
-    
+
 
     public void Damage(float damage, Vector3 dir)
     {
-        //Damage(damage);
+        Debug.Log("Dano recebido: " + damage);
+        healthBase.Damage(damage);
     }
-    
+
     #endregion
 
     void Update()

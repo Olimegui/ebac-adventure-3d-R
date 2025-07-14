@@ -10,6 +10,8 @@ public class GunBase : MonoBehaviour
     public float timeBetweenShoot = .3f;
     public float speed = 50f;
 
+    public GameObject owner;
+
     private Coroutine _currentCoroutine;
 
 
@@ -25,15 +27,22 @@ public class GunBase : MonoBehaviour
     public virtual void Shoot()
     {
         var projectile = Instantiate(prefabProjectile);
+        if (positionToShoot == null)
+        {
+            Debug.LogError("GunBase: 'positionToShoot' não foi atribuído!");
+            return;
+        }
         projectile.transform.position = positionToShoot.position;
         projectile.transform.rotation = positionToShoot.rotation;
         projectile.speed = speed;
 
         //Ignora colisão com o jogador
         var projectileCollider = projectile.GetComponentInChildren<Collider>();
-        if (projectileCollider != null && Player.Instance != null)
+
+        if (projectileCollider != null && owner != null)
         {
-            foreach (var col in Player.Instance.colliders)
+            var ownerColliders = owner.GetComponentsInChildren<Collider>();
+            foreach (var col in ownerColliders)
             {
                 if(col != null)
                 {
