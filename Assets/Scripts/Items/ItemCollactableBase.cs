@@ -6,7 +6,11 @@ namespace Itens
 {
     public class ItemCollactableBase : MonoBehaviour
     {
+        
+        public bool _collected = false;
+
         public ItemType itemType;
+
 
         public string compareTag = "Player";
         public ParticleSystem particleSystem;
@@ -25,15 +29,26 @@ namespace Itens
 
         private void OnTriggerEnter(Collider collision)
         {
+            if (_collected) return;
+
             if (collision.transform.CompareTag(compareTag))
             {
+                _collected = true;
                 Collect();
             }
         }
 
+        protected virtual void OnCollect()
+        {
+            if (collider != null) collider.enabled = false;
+            if (graphicItem != null) graphicItem.SetActive(false);
+
+            ItemManager.Instance.AddByType(itemType);
+        }
+
         protected virtual void Collect()
         {
-            if (collider !=null) collider.enabled = false;
+            if (collider != null) collider.enabled = false;
             if (graphicItem != null) graphicItem.SetActive(false);
             Invoke("HideObject", timeToHide);
             OnCollect();
@@ -42,14 +57,24 @@ namespace Itens
         private void HideObject()
         {
             gameObject.SetActive(false);
-
         }
 
-        protected virtual void OnCollect()
+    }
+
+    public class ItemLifePack : ItemCollactableBase
+    {
+        public GameObject hudLifePack;
+
+        protected override void OnCollect()
         {
-            if (particleSystem != null) particleSystem.Play();
-            if (audioSource != null) audioSource.Play();
-            ItemManager.Instance.AddByType(itemType);
+            base.OnCollect(); // toca partículas, som e atualiza ItemManager
+
+            if (hudLifePack != null)
+                hudLifePack.SetActive(true); // ativa HUD ao coletar
+
+            if (ActionLifePack.Instance != null)
+                ActionLifePack.Instance.EnableUsage(); // permite uso com L
         }
     }
+
 }

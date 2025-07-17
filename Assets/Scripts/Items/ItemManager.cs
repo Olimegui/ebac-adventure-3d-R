@@ -23,7 +23,7 @@ namespace Itens
         private void Start()
         {
             Reset();
-          //  UpdateCoinCounter();
+          //UpdateCoinCounter();
         }
 
         private void Reset()
@@ -36,7 +36,7 @@ namespace Itens
 
         public ItemSetup GetItemByType(ItemType itemType)
         {
-          return  itemSetups.Find(i => i.itemType == itemType);
+          return itemSetups.Find(i => i.itemType == itemType);
         }
 
         public void AddByType(ItemType itemType, int amount = 1)

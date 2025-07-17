@@ -5,28 +5,48 @@ using Itens;
 
 public class ActionLifePack : MonoBehaviour
 {
+    public static ActionLifePack Instance;
+
     public KeyCode keyCode = KeyCode.L;
+    public GameObject hudLifePack;
     public SOInt soInt;
- 
+
+    private void Awake()
+    {
+        Instance = this;
+        if(hudLifePack != null) hudLifePack.SetActive(false);
+    }
+
+    public void EnableUsage()
+    {
+        //Prepara referencia ao contador de LifePack
+        soInt = ItemManager.Instance.GetItemByType(ItemType.LIFE_PACK).soInt;
+
+    }
+
+
     private void Start()
     {
       soInt = ItemManager.Instance.GetItemByType(ItemType.LIFE_PACK).soInt;
     }
 
-    private void RecoverLife()
+    private void Update()
     {
-        if(soInt.value > 0)
+
+        if (Input.GetKeyDown(keyCode))
         {
-            ItemManager.Instance.RemoveByType(ItemType.LIFE_PACK);
-            Player.Instance.healthBase.ResetLife();
+            RecoverLife();
         }
     }
 
-    private void Update()
+    public void RecoverLife()
     {
-        if(Input.GetKeyDown(keyCode))
+        if(soInt != null && soInt.value > 0)
         {
-            RecoverLife();
+            ItemManager.Instance.RemoveByType(ItemType.LIFE_PACK);
+            Player.Instance.healthBase.ResetLife();
+
+            if(hudLifePack != null) hudLifePack.SetActive(false);
         }
     }
 }
