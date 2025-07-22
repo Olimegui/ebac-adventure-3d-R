@@ -14,14 +14,14 @@ public class DestructableItemBase : MonoBehaviour
     public GameObject coinPrefab;
     public Transform dropPosition;
 
-    private void OnValidade()
+    private void OnValidate()
     {
         if (healthBase == null) healthBase = GetComponent<HealthBase>();
     }
 
     private void Awake()
     {
-        OnValidade();
+        OnValidate();
         healthBase.OnDamage += OnDamage;
     }
 

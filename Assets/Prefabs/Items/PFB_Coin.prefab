@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be35e6a4d3c555c48b88e98771d31ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collected: 0
   itemType: 0
   compareTag: Player
   particleSystem: {fileID: 0}

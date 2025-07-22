@@ -72,12 +72,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyCode: 122
-  animator: {fileID: 0}
+  animator: {fileID: 2915012789130474867}
   triggerOpen: Open
-  notification: {fileID: 0}
+  notification: {fileID: 4412781361597848972}
   tweenDuration: 0.2
   tweenEase: 27
-  chestItem: {fileID: 0}
+  chestItem: {fileID: 7918940668098329620}
 --- !u!135 &4843478864409102236
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -411,3 +411,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8595267096011961612, guid: 27b8826781117be4ab602fc1920e5c03, type: 3}
   m_PrefabInstance: {fileID: 1238557723340175248}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7918940668098329620 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8995244518800673668, guid: 27b8826781117be4ab602fc1920e5c03, type: 3}
+  m_PrefabInstance: {fileID: 1238557723340175248}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d60f30f422bbdb4ea9f335bdf98f4e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
