@@ -14,7 +14,7 @@ public class ClothChanger : MonoBehaviour
     [NaughtyAttributes.Button]
     private void ChangeTexture()
     {
-        mesh.materials[0].SetTexture(shaderIdName, texture);
+        mesh.sharedMaterials[0].SetTexture(shaderIdName, texture);
     }
 
 
