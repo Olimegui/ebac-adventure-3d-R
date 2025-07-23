@@ -1902,7 +1902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clothSetups:
   - clothtype: 0
-    text: {fileID: 2800000, guid: c8e944de59c2bd34faab0a937ef3a5ff, type: 3}
+    texture: {fileID: 2800000, guid: c8e944de59c2bd34faab0a937ef3a5ff, type: 3}
 --- !u!4 &198121981
 Transform:
   m_ObjectHideFlags: 0
@@ -4615,7 +4615,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 641274704}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0031136603, y: 0.9957569, z: -0.0842947, w: -0.036781065}
+  m_LocalRotation: {x: -0.0020845816, y: 0.9961317, z: -0.084326394, w: -0.024624761}
   m_LocalPosition: {x: 16.15591, y: 3.298674, z: -7.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8187,7 +8187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1120942319}
-  - component: {fileID: 1120942318}
+  - component: {fileID: 1120942320}
   - component: {fileID: 1120942317}
   m_Layer: 0
   m_Name: ItemClothSpeed
@@ -8217,20 +8217,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1120942318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120942316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 091eaeed799c3364d9e8757a006d8f20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clothType: 0
-  compareTag: Player
 --- !u!4 &1120942319
 Transform:
   m_ObjectHideFlags: 0
@@ -8247,6 +8233,22 @@ Transform:
   - {fileID: 160541107}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1120942320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120942316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 091fd6ccdab15ec4e90fafe9f41cd768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothType: 0
+  duration: 2
+  compareTag: Player
+  targetSpeed: 20
 --- !u!1 &1125310342
 GameObject:
   m_ObjectHideFlags: 3
@@ -8868,6 +8870,7 @@ MonoBehaviour:
   - {fileID: 6248539581331279559}
   - {fileID: 6248539581331279558}
   healthBase: {fileID: 1186004475}
+  _clothChanger: {fileID: 7193805670922950539}
 --- !u!4 &1186004472
 Transform:
   m_ObjectHideFlags: 0
@@ -11433,7 +11436,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500100153}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0031136603, y: 0.9957569, z: -0.0842947, w: -0.036781065}
+  m_LocalRotation: {x: -0.0020845816, y: 0.9961317, z: -0.084326394, w: -0.024624761}
   m_LocalPosition: {x: 0, y: 3.03, z: 6.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12154,7 +12157,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609938952}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.011264899, y: 0.95164657, z: -0.30496943, w: -0.035151727}
+  m_LocalRotation: {x: -0.0075418, y: 0.9520047, z: -0.30508423, w: -0.023533925}
   m_LocalPosition: {x: 16.15591, y: 7.2686744, z: -6.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14638,7 +14641,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1875707366}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2443011, y: 0.0357926, z: -0.009023944, w: 0.96899664}
+  m_LocalRotation: {x: 0.24439302, y: 0.023962984, z: -0.0060414886, w: 0.9693613}
   m_LocalPosition: {x: 16.15591, y: 9.268674, z: -26.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

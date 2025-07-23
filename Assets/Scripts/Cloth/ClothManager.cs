@@ -27,6 +27,6 @@ namespace Cloth
     public class ClothSetup
     {
         public ClothType clothtype;
-        public Texture2D text;
+        public Texture2D texture;
     }
 }
