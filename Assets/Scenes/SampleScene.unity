@@ -1125,11 +1125,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1959866329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &102735881 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1979655859130102392, guid: 28193d608dcd09943963f0e571d02b90, type: 3}
-  m_PrefabInstance: {fileID: 6248539581331279555}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &110854772
 GameObject:
   m_ObjectHideFlags: 0
@@ -18918,9 +18913,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1979655859130102392, guid: 28193d608dcd09943963f0e571d02b90, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7193805670922950539}
     - targetCorrespondingSourceObject: {fileID: 3343233405977959584, guid: 28193d608dcd09943963f0e571d02b90, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6248539581331279559}
@@ -19147,21 +19139,17 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 2673759762858040399, guid: 28193d608dcd09943963f0e571d02b90, type: 3}
   m_PrefabInstance: {fileID: 6248539581331279555}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7193805670922950539
+--- !u!114 &7193805670922950539 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 4940680008160099588, guid: 28193d608dcd09943963f0e571d02b90, type: 3}
+  m_PrefabInstance: {fileID: 6248539581331279555}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102735881}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 416b1096a350cf84fbbb7a4d449175dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mesh: {fileID: 6248539581331279563}
-  texture: {fileID: 2800000, guid: c8e944de59c2bd34faab0a937ef3a5ff, type: 3}
-  shaderIdName: _EmissionMap
 --- !u!212 &7221993856189977005
 SpriteRenderer:
   m_ObjectHideFlags: 0
