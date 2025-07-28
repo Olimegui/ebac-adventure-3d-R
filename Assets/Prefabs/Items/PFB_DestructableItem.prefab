@@ -101,6 +101,7 @@ MonoBehaviour:
   destroyOnKill: 1
   _currentLife: 0
   uiGunUpdater: []
+  damageMultiply: 1
 --- !u!65 &3487086988245999604
 BoxCollider:
   m_ObjectHideFlags: 0
