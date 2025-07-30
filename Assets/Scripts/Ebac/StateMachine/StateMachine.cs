@@ -48,6 +48,7 @@ namespace Ebac.StateMachine
 
         public void SwitchState(T state, params object[] objs)
         {
+
             if (_currentState != null) _currentState.OnStateExit();
 
             if (dictionaryState.TryGetValue(state, out StateBase newState))

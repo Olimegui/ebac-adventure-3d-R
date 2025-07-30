@@ -1,42 +1,28 @@
-using System.Linq;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEditor;
+using UnityEngine;
 
 [CustomEditor(typeof(GameManager))]
 public class GameManagerEditor : Editor
 {
-    public bool showFoldout;
-
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
 
-        GameManager fsm = (GameManager)target;
+        GameManager gm = (GameManager)target;
 
-        EditorGUILayout.Space(30);
-        EditorGUILayout.LabelField("State Machine");
+        EditorGUILayout.Space(20);
+        EditorGUILayout.LabelField("Estado Atual do Jogo:", gm.CurrentState.ToString());
 
-        if (fsm.stateMachine == null) return;
+        EditorGUILayout.Space(10);
 
-        if (fsm.stateMachine.CurrentState != null)
-            EditorGUILayout.LabelField("Current State", fsm.stateMachine.CurrentState.ToString());
 
-        showFoldout = EditorGUILayout.Foldout(showFoldout, "Avaiable States");
+        if (GUILayout.Button("Jump"))
+            gm.SwitchState(GameManager.GameStates.JUMP);
 
-        if (showFoldout)
-        {
-            if (fsm.stateMachine.dictionaryState != null)
-            {
-                var Keys = fsm.stateMachine.dictionaryState.Keys.ToArray();
-                var Vals = fsm.stateMachine.dictionaryState.Values.ToArray();
+        if (GUILayout.Button("Land"))
+            gm.SwitchState(GameManager.GameStates.LAND);
 
-                for (int i = 0; i < Keys.Length; i++)
-                {
-                    EditorGUILayout.LabelField(string.Format("{0} :: {1}", Keys[i], Vals[i]));
-                }
-            }
-        }
+        if (GUILayout.Button("Death"))
+            gm.SwitchState(GameManager.GameStates.DEATH);
     }
 }

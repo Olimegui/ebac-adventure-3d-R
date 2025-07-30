@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(FSMExample))]
+[CustomEditor(typeof(PlayerFSM))]
 public class StateMachineEditor : Editor
 {
     public bool showFoldout;
@@ -13,7 +13,7 @@ public class StateMachineEditor : Editor
     {
         base.OnInspectorGUI();
 
-        FSMExample fsm = (FSMExample)target;
+        PlayerFSM fsm = target as PlayerFSM;
 
         EditorGUILayout.Space(30);
         EditorGUILayout.LabelField("State Machine");
