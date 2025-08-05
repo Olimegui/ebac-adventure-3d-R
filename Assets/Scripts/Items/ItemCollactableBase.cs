@@ -9,6 +9,7 @@ namespace Itens
         
         public bool _collected = false;
 
+        public SFXType sfxType;
         public ItemType itemType;
 
 
@@ -38,6 +39,11 @@ namespace Itens
             }
         }
 
+        private void PlaySFX()
+        {
+            SFXPool.Instance.Play(sfxType);
+        }
+
         protected virtual void OnCollect()
         {
             if (collider != null) collider.enabled = false;
@@ -48,6 +54,7 @@ namespace Itens
 
         protected virtual void Collect()
         {
+            PlaySFX();
             if (collider != null) collider.enabled = false;
             if (graphicItem != null) graphicItem.SetActive(false);
             Invoke("HideObject", timeToHide);

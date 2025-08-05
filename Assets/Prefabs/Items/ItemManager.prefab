@@ -47,7 +47,7 @@ MonoBehaviour:
   itemSetups:
   - itemType: 0
     soInt: {fileID: 11400000, guid: 266369a9201744647bae209a76968a84, type: 2}
+    icon: {fileID: 21300000, guid: be5129279b1dfca4ab4fa9ddc1c574f0, type: 3}
   - itemType: 1
     soInt: {fileID: 11400000, guid: ec154d7e63f635b4fb2ae09d491345ca, type: 2}
-  coins: {fileID: 0}
-  CoinCounterText: {fileID: 0}
+    icon: {fileID: 21300000, guid: d0ebe9b770a77b44ead0f0c12915b990, type: 3}

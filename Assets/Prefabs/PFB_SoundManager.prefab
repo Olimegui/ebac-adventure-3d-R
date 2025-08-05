@@ -45,17 +45,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSetups:
-  - musicType: 0
-    audioClip: {fileID: 8300000, guid: f5ee21cf8fb714d6492f4bd36526832c, type: 3}
-  - musicType: 0
-    audioClip: {fileID: 8300000, guid: 6cb9ff74a536944baab35afe99fc17ba, type: 3}
-  - musicType: 0
+  - musicType: 2
     audioClip: {fileID: 8300000, guid: aad7a7fba16964d45be7c4ebe62a3ae1, type: 3}
-  - musicType: 0
+  - musicType: 1
     audioClip: {fileID: 8300000, guid: 42088c686d43445edba06281e324ee8d, type: 3}
   - musicType: 0
     audioClip: {fileID: 8300000, guid: 1ecbc4ca893514424b3b391184d00869, type: 3}
   sfxSetups:
-  - sfxType: 0
-    audioClip: {fileID: 0}
+  - sfxType: 1
+    audioClip: {fileID: 8300000, guid: dc6614beca09347ec9b258f12d154bdd, type: 3}
   musicSource: {fileID: 0}
