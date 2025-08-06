@@ -38,10 +38,14 @@ public class SFXPool : Singleton<SFXPool>
     public void Play(SFXType sfxType)
     {
         if (sfxType == SFXType.NOME) return;
-       var sfx = SoundManager.Instance.GetSFXByType(sfxType);
 
-        _audioSourceList[_index].clip = sfx.audioClip;
-        _audioSourceList[_index].Play();
+        var sfx = SoundManager.Instance.GetSFXByType(sfxType);
+        if (sfx == null || sfx.audioClip == null) return;
+
+        var currentAudioSource = _audioSourceList[_index];
+        currentAudioSource.clip = sfx.audioClip;
+        currentAudioSource.volume = SoundManager.Instance.sfxVolume; // Aplica volume
+        currentAudioSource.Play();
 
         _index++;
         if (_index >= _audioSourceList.Count) _index = 0;

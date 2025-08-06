@@ -10,6 +10,10 @@ public class SoundManager : Singleton<SoundManager>
 
     public AudioSource musicSource;
 
+    [Range(0f, 1f)]
+    public float sfxVolume = 1f;
+
+
     public void PlayMusicByType(MusicType musicType)
     {
        var music = GetMusicByType(musicType);

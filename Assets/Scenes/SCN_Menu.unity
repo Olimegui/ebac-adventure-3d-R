@@ -2816,7 +2816,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0075683594, y: 6.549988}
+  m_AnchoredPosition: {x: -0.0075683594, y: 6.550049}
   m_SizeDelta: {x: -1737.74, y: -978.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1689230975
@@ -4023,22 +4023,6 @@ PrefabInstance:
     - target: {fileID: 2672132333085465544, guid: ad1788255d37f6741ad31528ce3e97fe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3462794007815676752, guid: ad1788255d37f6741ad31528ce3e97fe, type: 3}
-      propertyPath: _saveSetup.coins
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3462794007815676752, guid: ad1788255d37f6741ad31528ce3e97fe, type: 3}
-      propertyPath: _saveSetup.health
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3462794007815676752, guid: ad1788255d37f6741ad31528ce3e97fe, type: 3}
-      propertyPath: _saveSetup.lastLevel
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3462794007815676752, guid: ad1788255d37f6741ad31528ce3e97fe, type: 3}
-      propertyPath: _saveSetup.playerName
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4796065126243953053, guid: ad1788255d37f6741ad31528ce3e97fe, type: 3}
       propertyPath: m_Name
